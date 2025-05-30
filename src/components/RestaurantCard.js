@@ -1,15 +1,19 @@
-import { CDN_URL, LOGO_URL } from "../utils/constants";
+const RestaurauntCard = (props) => {
+    const { name, cuisines, avgRating, cloudinaryImageId, sla } = props.restaurant;
 
-const RestaurauntCard=(props)=>{
-    console.log(props)
     return (
         <div className="res-card">
-            <img className="res-logo" src={LOGO_URL}/>
-            <h3>{props.resName}</h3>
-            <h4>{props.cuisine}</h4>
-            <h4>4.4 stars</h4>
-            <h4>38 minutes</h4>
+            <img
+                className="res-logo"
+                src={`https://media-assets.swiggy.com/swiggy/image/upload/${cloudinaryImageId}`}
+                alt={name}
+            />
+            <h3 className="restaurantInfo">{name}</h3>
+            <p className="restaurantInfo">Cuisine: {cuisines?.join(", ")}</p>
+            <p className="restaurantInfo">Rating: {avgRating} stars</p>
+            <p className="restaurantInfo">Delivery Time: {sla?.deliveryTime} minutes</p>
         </div>
-    )
-}
+    );
+};
+
 export default RestaurauntCard;
