@@ -9,9 +9,9 @@ const RestaurauntCard = (props) => {
                 alt={name}
             />
             <h3 className="restaurantInfo">{name}</h3>
-            <p className="restaurantInfo">Cuisine: {cuisines?.join(", ")}</p>
-            <p className="restaurantInfo">Rating: {avgRating} stars</p>
-            <p className="restaurantInfo">Delivery Time: {sla?.deliveryTime} minutes</p>
+            <p className="restaurantInfo"><b>Cuisine:</b> {cuisines?.join(", ")}</p>
+            <p className="restaurantInfo"><b>Rating:</b> {avgRating} stars</p>
+            <p className="restaurantInfo"><b>Delivery Time:</b> {sla?.deliveryTime} minutes</p>
         </div>
     );
 };

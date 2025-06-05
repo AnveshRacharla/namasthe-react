@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -16,20 +19,47 @@
 }
 .nav-items ul li{
     margin: 10px;
-    padding: 10px;
+    padding: 6px;
 }
-.res-container{
+.nav-items ul li a{ 
+    text-decoration: none;
+    color: black;
+}
+.res-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
 }
-.res-card{
-    margin: 5px;
+
+.res-card {
     padding: 5px;
     height: 420px;
     width: 220px;
     background-color: rgb(197, 197, 197);
     border-radius: 10px;
-    transition: transform 0.2s ease;
+    transition: all 0.15s ease;
+    opacity: 1;
+    transform: scale(1);
+    box-sizing: border-box; 
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+.shimmer-card{
+    margin-top: -10px;
+    padding: 5px;
+    height: 420px;
+    width: 220px;
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    transition: all 0.15s ease;
+    opacity: 1;
+    transform: scale(1);
+    box-sizing: border-box; 
 }
 .res-container a{
     text-decoration:none;
@@ -42,27 +72,16 @@
 }
 .search{
     padding: 10px;
+    margin-left: 35px;
 }
 .res-logo{
     height: 200px;
-    width: 220px;
+    width: 210px;
     border-radius: 5px;
 }
 .filter-btn{
     margin: 10px;
     cursor: pointer;
-}
-.shimmer-card{
-    width: 220px;
-    height: 420px;
-    margin: 10px;
-    background-color:  rgb(197, 197, 197);
-    border-radius: 10px;
-
-}
-.shimmer-container{
-    display: flex;
-    flex-wrap: wrap;
 }
 .login{
     padding: 0px 20px;
