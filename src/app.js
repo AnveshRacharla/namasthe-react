@@ -19,36 +19,33 @@ const AppLayout=()=>{
     )
 };
 
-const appRouter=createBrowserRouter([
+const appRouter = createBrowserRouter(
+  [
     {
-        path:"/",
-        element:<AppLayout/>,
-        children:[
-            {
-                path:"/",
-                element:<Body/>
-            },
-            {
-                path:"/about",
-                element:<About/>,
-            },
-            {
-                path:"/contact",
-                element:<Contact/>,
-            },
-            {
-                path:"/grocery",
-                element:<Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>,
-            },
-            {
-                path:"/restaurants/:resId",
-                element:<RestaurantMenu/>,
-            }
-        ],
-        errorElement:<Error/>
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        { path: "/", element: <Body /> },
+        { path: "/about", element: <About /> },
+        { path: "/contact", element: <Contact /> },
+        {
+          path: "/grocery",
+          element: (
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <Grocery />
+            </Suspense>
+          ),
+        },
+        { path: "/restaurants/:resId", element: <RestaurantMenu /> },
+      ],
+      errorElement: <Error />,
     },
-    
-]);
+  ],
+  {
+    basename: process.env.NODE_ENV === "production" ? "/namasthe-react" : "/",
+  }
+);
+
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
 
