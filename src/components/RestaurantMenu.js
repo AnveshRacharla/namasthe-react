@@ -1,32 +1,35 @@
 import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
+import ShimmerItemList from "./ShimmerItemList";
 
 const RestaurantMenu = () => {
     const { resId } = useParams();
+
+    const[showIndex,setShowIndex]=useState(null);
     
     const resInfo=useRestaurantMenu(resId);
 
-    if (resInfo == null) return <Shimmer />;
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        }, []);
+
+
+    if (resInfo == null) return <ShimmerItemList />;
 
     const { name, cuisines, costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info || {};
-    const itemCards = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.find(
-        (card) => card?.card?.card?.itemCards
-    )?.card?.card?.itemCards || [];
+    
+    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+        (c) => c?.card?.card?.["@type"]=="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );    
 
     return (
-        <div className="menu">
-            <h1>{name}</h1>
-            <p>{cuisines?.join(", ")} - {costForTwoMessage}</p>
-            <h2>Menu</h2>
-            <ul>
-                {itemCards.map((item) => (
-                    <li key={item.card.info.id}>
-                        {item.card.info.name} - ₹{(item.card.info.price || item.card.info.defaultPrice) / 100}
-                    </li>
-                ))}
-            </ul>
+        <div className="text-center">
+            <h1 className="font-bold my-3 text-2xl">{name}</h1>
+            <p className="font-bold">{cuisines?.join(", ")} - {costForTwoMessage}</p>
+            {categories.map((category,index)=> 
+            <RestaurantCategory key={category?.card.card.categoryId} setShowIndex={()=>setShowIndex(index)} data={category?.card.card} closeitems={()=>setShowIndex(null)} showItems={index==showIndex?true:false}/>)}
         </div>
     );
 };
