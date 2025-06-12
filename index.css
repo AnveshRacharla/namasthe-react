@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+
+/* * {
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.logo{
+    width: 100px;
+}
+.nav-items{
+    padding: 0px 20px;
+}
+.nav-items>ul{
+    font-size: 20px;
+    display: flex;
+    list-style-type: none;
+}
+.nav-items ul li{
+    margin: 10px;
+    padding: 6px;
+}
+.nav-items ul li a{ 
+    text-decoration: none;
+    color: black;
+}
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.res-card {
+    padding: 5px;
+    height: 420px;
+    width: 220px;
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    transition: all 0.15s ease;
+    opacity: 1;
+    transform: scale(1);
+    box-sizing: border-box; 
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+.shimmer-card{
+    margin-top: -10px;
+    padding: 5px;
+    height: 420px;
+    width: 220px;
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    transition: all 0.15s ease;
+    opacity: 1;
+    transform: scale(1);
+    box-sizing: border-box; 
+}
+.res-container a{
+    text-decoration:none;
+    color: black;
+}
+.res-card:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.search{
+    padding: 10px;
+    margin-left: 35px;
+}
+.res-logo{
+    height: 200px;
+    width: 210px;
+    border-radius: 5px;
+}
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
+}
+.login{
+    padding: 0px 20px;
+    cursor: pointer;
+    height: 30px;
+    margin-top: 15px;
+}
+.filter{
+    display: flex;
+}
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}
+.user-card a{
+    text-decoration: none;
+    color: black;
+} */
